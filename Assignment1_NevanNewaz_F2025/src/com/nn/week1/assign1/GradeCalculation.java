@@ -15,11 +15,19 @@ public class GradeCalculation {
 		float total = 0, avg;
 
 		try (Scanner scanner = new Scanner(System.in)) {
+			boolean valid = false;
 			for (i = 0; i < 6; i++) {
-
-				System.out.print("Enter Marks of Subject" + (i + 1) + ":");
-				marks[i] = scanner.nextInt();
-				total = total + marks[i];
+				valid = false;
+				while (!valid) {
+					System.out.print("Enter Marks of Subject " + (i + 1) + ": ");
+					marks[i] = scanner.nextInt();
+					if (marks[i] >= 0 && marks[i] <= 100) {
+						total = total + marks[i];
+						valid = true;
+					} else {
+						System.out.println("Grade must be between 0 and 100.");
+					}
+				}
 			}
 			scanner.close();
 		}

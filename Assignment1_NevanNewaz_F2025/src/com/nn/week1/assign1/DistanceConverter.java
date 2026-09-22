@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class DistanceConverter {
 	static Scanner sc = new Scanner(System.in);
 	
-	static double toKms() {
+	public static double toKms() {
 		double miles, kilometers = 0;
 		System.out.print("Enter distance in Miles: ");
 		miles = sc.nextDouble();
